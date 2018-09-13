@@ -1,0 +1,60 @@
+<!--pages/user-center/my-store/index/index.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit" class="store-form">
+    <view class="panel-group">
+      <view class="panel">
+        <tty-input data-name="shopLinkMan" title="店长姓名" required hasLine right focus="true" name="shopLinkMan" placeholder="请填写店长姓名" value="{{formData.shopLinkMan}}" bindchange="handleInput" />
+        <tty-input data-name="shopTelphone" title="店长电话" required hasLine right name="shopTelphone" placeholder="请填写店长电话" value="{{formData.shopTelphone}}" bindchange="handleInput" inputType="number" />
+        <tty-input data-name="shopName" title="门店名称" required hasLine right name="shopName" placeholder="请填写门店名称" value="{{formData.shopName}}" bindchange="handleInput" />
+        <tty-input type="textarea" data-name="shopAddress" title="门店地址" required hasLine right disabled="true" name="shopAddress" placeholder="请设置门店地址" value="{{formData.shopAddress}}">
+          <button class="btn-location" plain hover-class="hover-class" bindtap="chooseLocation">
+            <tty-icon class="icon-location" type="location"></tty-icon>
+          </button>
+        </tty-input>
+        <tty-input data-name="referrer" title="推荐人" required hasLine right inputType="number" name="referrer" disabled="{{isReferrerInputDisabled}}" placeholder="请填写推荐人工号或手机号" value="{{formData.referrer}}" bindchange="handleInput" />
+        <tty-input data-name="referrerName" title="推荐人姓名" right name="referrerName" placeholder="请填写推荐人姓名" value="{{formData.referrerName}}" bindchange="handleInput" />
+      </view>
+      <view class="panel">
+        <view class="panel-header required">
+          <text class="form-item-name">门店门头照片</text>
+          <text>最多上传9张</text>
+        </view>
+        <view class="panel-body">
+          <block wx:for="{{formData.shopDoorPhoto}}" wx:key="{{index}}">
+            <view class="photo-wrap">
+              <image src="{{item.url}}"></image>
+              <tty-icon class="photo-del-btn" type="inputbox-del" data-arrayname="shopDoorPhoto" data-index="{{index}}" bindtap="deleteImage"></tty-icon>
+            </view>
+          </block>
+          <button wx:if="{{(formData.shopDoorPhoto.length < 9)}}" class="add-img-btn" hover-class="hover-class" plain bindtap="chooseShopDoorPhoto" data-arrayname="shopDoorPhoto" bindtap="chooseImage">
+            <tty-icon class="add-icon" type="control-community"></tty-icon>
+          </button>
+        </view>
+      </view>
+      <view class="panel">
+        <view class="panel-header">
+          <text class="form-item-name">营业执照</text>
+          <text>最多上传9张</text>
+        </view>
+        <view class="panel-body">
+          <block wx:for="{{formData.businessLicensePhoto}}" wx:key="{{index}}">
+            <view class="photo-wrap">
+              <image src="{{item.url}}"></image>
+              <tty-icon class="photo-del-btn" type="inputbox-del" data-arrayname="businessLicensePhoto" data-index="{{index}}" bindtap="deleteImage"></tty-icon>
+            </view>
+          </block>
+          <button wx:if="{{(formData.businessLicensePhoto.length < 9)}}" class="add-img-btn" hover-class="hover-class" plain bindtap="chooseBusinessLicensePhoto" data-arrayname="businessLicensePhoto" bindtap="chooseImage">
+            <tty-icon class="add-icon" type="control-community"></tty-icon>
+          </button>
+        </view>
+      </view>
+    </view>
+    <button class="btn btn-primary" formType="submit">保存</button>
+  </form>
+
+  <tty-modal show="{{showAuthDialog}}" show-footer="true" show-cancel-button="true" confirm-button-text="去设置" confirm-button-open-type="openSetting" bindconfirm="confirmTap" bindcancel="cancelTap">
+    <view class="modal-tips">
+      <text class="modal-tips-text">您未开启点位权限，无法获取到位置信息哦~</text>
+    </view>
+  </tty-modal>
+</view>

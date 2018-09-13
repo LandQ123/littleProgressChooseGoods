@@ -1,0 +1,97 @@
+/* 底部固定按钮 */
+page {
+  font-size: 28rpx;
+}
+
+.btn--fixed {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20rpx;
+  width: 670rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  border-radius: 44rpx;
+}
+
+/* 列表页-没有更多 */
+.tip--nomore {
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+  color: #ddd;
+}
+
+.tip--nomore__text {
+  position: relative;
+  display: inline-block;
+}
+
+.tip--nomore__text:before,
+.tip--nomore__text:after {
+  position: absolute;
+  top: 50%;
+  display: inline-block;
+  content: '';
+  width: 80rpx;
+  height: 1rpx;
+  background-color: #ddd;
+  margin: 0 16rpx 10rpx;
+  transform: scale(.5);
+}
+
+.tip--nomore__text:before {
+  left: -96rpx;
+}
+
+.tip--nomore__text:after {
+  right: -96rpx;
+}
+
+/* 添加内容对话框 */
+.goodMgr-add-item {
+  display: flex;
+  align-items: center;
+  height: 176rpx;
+}
+
+.goodMgr-add-item__input {
+  box-sizing: border-box;
+  width: 520rpx;
+  height: 88rpx;
+  margin: 0 auto;
+  padding: 0 40rpx;
+  background: rgba(242, 242, 242, 1);
+  border-radius: 44rpx;
+}
+
+.goodMgr-add-item__input-placeholder {
+  text-align: center;
+}
+
+/* 统一添加对话框样式 新增商品的新增品牌 编辑商品增加库存 */
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 280rpx;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 40px;
+}
+
+.cancelBtnCls {
+  height: 96rpx;
+  font-size: 32rpx;
+  color: #1C69D3;
+}
+
+.confirmBtnCls {
+  height: 96rpx;
+  font-size: 32rpx;
+}

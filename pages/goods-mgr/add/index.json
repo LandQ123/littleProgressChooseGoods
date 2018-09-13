@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "tty-input": "../../../components/tty-ui/field/index",
+    "tty-icon": "../../../components/tty-ui/icon/index",
+    "tty-dialog": "../../../components/tty-ui/dialog/index",
+    "tty-row": "../../../components/tty-ui/row/index",
+    "tty-col": "../../../components/tty-ui/col/index",
+    "tty-modal": "../../../components/modal/modal"
+  }
+}

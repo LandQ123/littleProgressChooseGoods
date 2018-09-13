@@ -1,0 +1,13 @@
+<!-- pages/goods-mgr/index.wxml -->
+<view class="goodsMgr-index border border-top">
+  <view wx:if="{{typeData.length}}" class="tty-linkage-wrap">
+    <tty-linkage goods-class="border border-bottom" management bindviewDetailFunc="handleViewDetail" data="{{typeData}}" content-class="goodsMgr-linkpage">
+    </tty-linkage>
+  </view>
+  <view wx:else class="blank-page">{{tip}}</view>
+  <view class="footer">
+    <navigator url="/pages/goods-mgr/add/index?title=新增商品">
+      <button class="btn btn-primary btn--fixed">新增商品</button>
+    </navigator>
+  </view>
+</view>

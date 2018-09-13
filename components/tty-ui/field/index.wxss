@@ -1,0 +1,186 @@
+.tty-cell {
+  position: relative;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  line-height: 1.4;
+  background-color: #fff;
+  font-size: 16px
+}
+
+.tty-cell--line::after {
+  content: '';
+  position: absolute;
+  top: -1rpx;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  border: 0 solid #e5e5e5;
+  border-bottom-width: 1px;
+  left: 0px;
+  right: 0;
+}
+
+.tty-cell .tty-cell__icon {
+  margin-right: 5px
+}
+
+.tty-cell .tty-cell__icon:empty {
+  display: none
+}
+
+.tty-cell__bd {
+  flex: 1
+}
+
+.tty-cell__text {
+  line-height: 24px;
+  font-size: 16px
+}
+
+.tty-cell__desc {
+  line-height: 1.2;
+  font-size: 12px;
+  color: #666
+}
+
+.tty-cell__ft {
+  position: relative;
+  text-align: right;
+  color: #666
+}
+
+.tty-cell__no-pading {
+  padding: 0
+}
+
+.tty-cell__no-pading .tty-cell__bd_padding {
+  padding: 12px 0 12px 15px
+}
+
+.tty-cell__no-pading .tty-cell__bd_padding .tty-form__input {
+  height: 26px
+}
+
+.tty-cell__no-pading .tty-cell__ft_padding {
+  padding: 12px 15px 12px 0
+}
+
+.tty-cell.last-cell::after {
+  display: none
+}
+
+.tty-cell--access .tty-cell__ft {
+  padding-right: 13px
+}
+
+.tty-cell--access .tty-cell__ft::after {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  -webkit-transform: translateY(-50%) matrix(.71, .71, -.71, .71, 0, 0);
+  transform: translateY(-50%) matrix(.71, .71, -.71, .71, 0, 0)
+}
+
+.tty-cell--switch {
+  padding-top: 6px;
+  padding-bottom: 6px
+}
+
+.tty-field {
+  position: relative;
+  padding: 7px 15px;
+  color: #333
+}
+
+.tty-field__required {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 32rpx;
+  margin: auto 0;
+  border-left: 4rpx solid #FF3200;
+}
+
+.tty-field--wrapped {
+  margin: 10px 15px;
+  background-color: #fff
+}
+
+.tty-field--wrapped::after {
+  left: 0;
+  border-width: 1px;
+  border-radius: 4px
+}
+
+.tty-field.tty-field--wrapped::after {
+  display: block
+}
+
+.tty-field--error {
+  color: #f40
+}
+
+.tty-field--wrapped.tty-field--error::after {
+  border-color: #f40
+}
+
+.tty-field__title {
+  color: #333;
+  min-width: 65px;
+  padding-right: 10px
+}
+
+.tty-field__input {
+  flex: 1;
+  line-height: 1.6;
+  padding: 4px 0;
+  min-height: 22px;
+  height: auto;
+  font-size: 16px
+}
+
+.tty-field__placeholder {
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+.tty-field__input--right {
+  text-align: right
+}
+
+.tty-field--access .tty-field__ft {
+  padding-right: 13px
+}
+
+.tty-field--access .tty-field__ft::after {
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #c8c8c8;
+  border-style: solid;
+  -webkit-transform: translateY(-50%) matrix(.71, .71, -.71, .71, 0, 0);
+  transform: translateY(-50%) matrix(.71, .71, -.71, .71, 0, 0)
+}
+.purchase{
+  font-size: 40rpx;
+}

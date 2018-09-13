@@ -1,0 +1,103 @@
+/* pages/user-center/my-store/index/index.wxss */
+.container {
+  padding-bottom: 108rpx;
+}
+
+.btn-location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72rpx;
+  height: 72rpx;
+  margin-left: 24rpx;
+  padding: 0;
+  border: none !important;
+  background-color: #f2f2f2 !important;
+  border-radius: 36rpx;
+}
+
+btn-location::after {
+  border: none !important;
+}
+
+.icon-location {
+  font-size: 48rpx;
+  color: #666;
+}
+
+.form-item-name {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.panel-body {
+  display: flex;
+  justify-content: start;
+  flex-flow: wrap;
+  padding: 24rpx 0 0 0;
+}
+
+.panel-body .add-img-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 136rpx;
+  height: 136rpx;
+  margin: 0 0 24rpx 24rpx;
+  padding: 0;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 0;
+}
+
+.panel-body .add-img-btn::after {
+  border: none;
+  border-radius: 0;
+}
+
+.panel-body .add-icon {
+  font-size: 72rpx;
+  color: #ccc;
+}
+
+.panel-body .photo-wrap {
+  position: relative;
+  width: 136rpx;
+  height: 136rpx;
+  margin: 0 0 24rpx 24rpx;
+}
+
+.panel-body .photo-wrap image {
+  display: block;
+  width: 136rpx;
+  height: 136rpx;
+}
+
+.panel-body .photo-wrap .photo-del-btn {
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+  width: 52rpx;
+  height: 52rpx;
+  line-height: 52rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #666;
+}
+
+.panel-body .photo-wrap .photo-del-btn:active {
+  box-shadow: 0 0 0 10000rpx rgba(0, 0, 0, 0.1) inset;
+}
+
+.store-form .btn-primary {
+  position: fixed;
+  left: 40rpx;
+  bottom: 20rpx;
+  z-index: 100;
+  width: 670rpx;
+}
+
+.modal-tips {
+  padding: 72rpx 36rpx;
+  text-align: center;
+}

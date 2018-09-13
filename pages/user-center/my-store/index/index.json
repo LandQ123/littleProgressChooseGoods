@@ -1,0 +1,10 @@
+{
+  "window": {
+    "navigationBarTitleText": "门店信息"
+  },
+  "usingComponents": {
+    "tty-input": "/components/tty-ui/field/index",
+    "tty-icon": "/components/tty-ui/icon/index",
+    "tty-modal": "/components/modal/modal"
+  }
+}

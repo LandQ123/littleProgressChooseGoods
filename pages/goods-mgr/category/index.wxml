@@ -1,0 +1,8 @@
+<!--pages/goods-mgr/category/index.wxml-->
+<view class="goodsMgr-category">
+  <scroll-view class="category-sidebar">
+    <view wx:for="{{categories}}" data-index="{{index}}" wx:key="{{item.goods_category_one_id}}" bindtap="handleSidebarChange"
+      class="category-sidebar__item {{checkedIndex === index ? 'checked' : ''}}">{{item.goods_category_one_name}}</view>
+  </scroll-view>
+  <list class="category-list" data="{{subCategories}}" bindchange="handleListChange" list-cls="border border-bottom"></list>
+</view>

@@ -1,0 +1,16 @@
+<!--components/num-choose/num-choose.wxml-->
+<view class="wrapper">
+    <view class="num-choose {{totalNum || change ? 'active': ''}}">
+        <view class="minus {{totalNum || change ? 'active': ''}}" catchtap="minusHandle" data-goodsId="{{goodsId}}">
+            <tty-icon type="control-reduce"></tty-icon>
+        </view>
+        <view class="task task-left"></view>
+        <input class="num" wx:if="{{totalNum || change}}" type="number" maxlength="4" bindinput="changeNum"
+         value="{{totalNum}}" bindfocus="focusNum" bindblur="blurNum" data-goodsId="{{goodsId}}"></input>
+         <view class="task task-right"></view>
+        <view class="plus" catchtap="plusHandle" data-goodsId="{{goodsId}}">
+            <tty-icon type="control-community"></tty-icon>
+        </view>
+    </view>
+</view>
+

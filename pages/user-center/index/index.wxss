@@ -1,0 +1,89 @@
+.user-info-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32rpx 30rpx;
+  background:linear-gradient(90deg,rgba(0,160,230,1),rgba(28,105,211,1));
+}
+
+.user-avatar {
+  box-sizing: border-box;
+  width: 136rpx;
+  height: 136rpx;
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  margin-left: 20rpx;
+  color: #fff;
+}
+
+.user-info .nick-name {
+  padding: 7rpx 0;
+  font-size: 36rpx;
+}
+
+.user-info .mobile {
+  padding: 7rpx 0;
+  font-size: 32rpx;
+}
+
+.btn-get-userinfo {
+  width: 240rpx;
+  height: 72rpx;
+  line-height:72rpx;
+  font-size:28rpx;
+  color:#00A0E6;
+}
+
+.li-group {
+  overflow: hidden;
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+
+.li-group .li {
+  position: relative;
+  display: flex;
+  padding: 26rpx 30rpx;
+  font-size: 32rpx;
+}
+
+.li-group .li:not(:first-child)::before {
+  left: 30rpx;
+}
+
+.li-group .li.li-btn {
+  background: #fff;
+  border-radius: 0;
+}
+
+.li-group .li .li-icon {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 44rpx;
+}
+
+.li-group .li .li-name {
+  flex: 1;
+  height: 44rpx;
+  line-height: 44rpx;
+  margin-left: 24rpx;
+  color: #333;
+  text-align: left;
+}
+
+.li-group .li .li-icon-more {
+  height: 44rpx;
+  line-height: 44rpx;
+  color: #ccc;
+}
+
+.li-group .li::after {
+  left: 30rpx;
+}

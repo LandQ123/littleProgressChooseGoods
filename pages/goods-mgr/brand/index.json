@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "选择品牌",
+  "usingComponents": {
+    "list": "../list/index",
+    "tty-dialog": "../../../components/tty-ui/dialog/index",
+    "tty-modal": "../../../components/modal/modal"
+  }
+}

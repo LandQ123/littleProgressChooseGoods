@@ -1,0 +1,10 @@
+{
+  "window": {
+    "navigationBarTitleText": "开单"
+  },
+  "usingComponents": {
+    "tty-linkage": "../../../components/linkage/linkage",
+    "tty-sh-basket": "../../../components/shopping-basket/shopping-basket",
+    "tty-dialog": "../../../components/tty-ui/dialog/index"
+  }
+}

@@ -1,0 +1,9 @@
+<view class="tty-cell tty-field  {{ error ? 'tty-field--error' : '' }} {{ mode === 'wrapped' ? 'tty-field--wrapped' : '' }} {{isLink ? 'tty-field--access' : ''}} {{hasLine ? 'tty-cell--line' : ''}}">
+  <text wx:if="{{required}}" class="tty-field__required"></text>
+  <view wx:if="{{ title }}" class="tty-cell__hd tty-field__title">{{ title }}</view>
+  <textarea wx:if="{{ type === 'textarea' }}" auto-height disabled="{{ disabled }}" focus="{{ focus }}" value="{{ value }}" placeholder="{{ placeholder }}" maxlength="{{ maxlength }}" class="tty-field__input tty-cell__bd {{ right ? 'tty-field__input--right' : '' }} textarea-cls" placeholder-class="tty-field__placeholder" bindinput="handleFieldChange" bindfocus="handleFieldFocus" bindblur="handleFieldBlur"></textarea>
+  <input wx:else type="{{ inputType || 'text' }}" disabled="{{ disabled }}" focus="{{ focus }}" value="{{ value }}" placeholder="{{ placeholder }}" maxlength="{{ maxlength }}" class="tty-field__input tty-cell__bd {{ right ? 'tty-field__input--right' : '' }} input-cls" placeholder-class="tty-field__placeholder" bindinput="handleFieldChange" bindfocus="handleFieldFocus" bindblur="handleFieldBlur" />
+  <view class="tty-field__ft">
+    <slot></slot>
+  </view>
+</view>

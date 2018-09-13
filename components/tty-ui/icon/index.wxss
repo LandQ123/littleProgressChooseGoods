@@ -1,0 +1,147 @@
+@font-face {
+  font-family: ttyui-weapp-icon;
+  src: url('https://at.alicdn.com/t/font_703014_gw77qytejlm.eot');
+  src: url('https://at.alicdn.com/t/font_703014_gw77qytejlm.eot?#iefix') format('embedded-opentype'),
+         url('https://at.alicdn.com/t/font_703014_gw77qytejlm.woff') format('woff'),
+         url('https://at.alicdn.com/t/font_703014_gw77qytejlm.ttf') format('truetype'),
+         url('https://at.alicdn.com/t/font_703014_gw77qytejlm.svg#iconfont') format('svg');
+}
+
+.tty-icon {
+  display: inline-block;
+}
+
+.tty-icon::before {
+  font-family: ttyui-weapp-icon !important;
+  font-style: normal;
+  font-weight: 400;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-location-success:before {
+  content: "\e746";
+}
+
+.icon-control-community:before {
+  content: "\e759";
+}
+
+.icon-control-reduce:before {
+  content: "\e75c";
+}
+
+.icon-inputbox-del:before {
+  content: "\e762";
+}
+
+.icon-tishi_wancheng:before {
+  content: "\e78a";
+}
+
+.icon-saomiao-def:before {
+  content: "\e7ad";
+}
+
+.icon-wode-mendian:before {
+  content: "\e7bd";
+}
+
+.icon-more:before {
+  content: "\e7cd";
+}
+
+.icon-wode-qrcode:before {
+  content: "\e7ce";
+}
+
+.icon-navbar-zhuye-sel:before {
+  content: "\e7dd";
+}
+
+.icon-navbar-zhuye-def:before {
+  content: "\e7de";
+}
+
+.icon-navbar-taizhang-sel:before {
+  content: "\e7df";
+}
+
+.icon-navbar-taizhang-def:before {
+  content: "\e7e0";
+}
+
+.icon-navbar-wode-sel:before {
+  content: "\e7e1";
+}
+
+.icon-navbar-wode-def:before {
+  content: "\e7e2";
+}
+
+.icon-zhuye-caigou:before {
+  content: "\e7e3";
+}
+
+.icon-bar-gouwuche:before {
+  content: "\e7e4";
+}
+
+.icon-gouwuche-qingko:before {
+  content: "\e7e5";
+}
+
+.icon-wode-bangzhu:before {
+  content: "\e7e6";
+}
+
+.icon-wode-xiazai:before {
+  content: "\e7e7";
+}
+
+.icon-wode-banlixukez:before {
+  content: "\e7e8";
+}
+
+.icon-zhuye-kaidan:before {
+  content: "\e7e9";
+}
+
+.icon-zhuye-shangping:before {
+  content: "\e7ea";
+}
+
+.icon-search:before {
+  content: "\e7f1";
+}
+
+.icon-location:before {
+  content: "\e7f9";
+}
+
+.icon-zhuye-bangzhu:before {
+  content: "\e80b";
+}
+
+.icon-zhuye-ruku:before {
+  content: "\e80c";
+}
+
+.icon-zhuye-kefu:before {
+  content: "\e80d";
+}
+
+.icon-wode-kefu:before {
+  content: "\e80e";
+}
+
+.icon-offline:before {
+  content: "\e80f";
+}

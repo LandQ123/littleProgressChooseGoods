@@ -1,0 +1,15 @@
+<wxs src="../../../filter/filter.wxs" module="filter"/>
+<view class="container">
+  <view class="main" wx:if="{{typeData.length}}">
+    <tty-linkage data="{{typeData}}" procurement bindContentEvent="contentEvent" goods-class="border border-bottom"></tty-linkage>
+  </view>
+  <view class="shopping-basket" wx:if="{{typeData.length}}">
+    <tty-sh-basket goodsData="{{goodsData}}" pageTotalMoney="{{filter.currencyFormat(pageTotalMoney)}}"
+                   pageTotalNum="{{pageTotalNum}}" bindBasketEvent="basketEvent"
+                   bindClearAll="clearAll" bindConfirm="confirm"
+                   my-btn="btn btn-success btn-right-angle" my-basket="border border-top"
+                   my-basket-list="border border-bottom"></tty-sh-basket>
+  </view>
+  <tty-dialog id="tty-dialog-msg" content-class="kaidan-height"></tty-dialog>
+  <tty-dialog id="tty-dialog-nogoods" content-class="kaidan-height"></tty-dialog>
+</view>

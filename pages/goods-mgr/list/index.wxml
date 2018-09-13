@@ -1,0 +1,11 @@
+<!--pages/goods-mgr/list/index.wxml-->
+<view class="goodsMgr-list">
+  <view wx:for="{{data}}" data-index="{{index}}" wx:key="{{item.brand_id||item.unit_id||item.goods_category_two_id}}" class="list-item {{checkedIndex === index? 'checked' : ''}} list-cls"
+    bindtap="handleCheck">
+    <text>{{item.brand_name || item.unit_name||item.goods_category_two_name}}</text>
+    <icon wx:if="{{checkedIndex === index}}" type="success" color="#00A0E6" class="list-item__icon" />
+  </view>
+  <view class="tip--nomore">
+    <text class="tip--nomore__text">没有更多</text>
+  </view>
+</view>

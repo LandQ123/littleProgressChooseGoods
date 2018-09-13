@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="user-info-wrap">
+    <image bindtap="bindViewTap" class="user-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+    <view class="user-info">
+      <text class="nick-name">{{userInfo.nickName}}</text>
+      <text class="mobile">{{loginInfo.mobile}}</text>
+    </view>
+    <button wx:if="{{!hasUserInfo && canIUse}}" class="btn btn-default btn-get-userinfo" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+  </view>
+
+  <view class="li-group" wx:for="{{pageList}}" wx:for-item="groupItem">
+    <block wx:for="{{groupItem}}" wx:for-item="pageItem" wx:for-index="index">
+      <view wx:if="{{pageItem.url}}" class="li{{index !== 0?' border border-top':''}}" hover-class="hover-class" data-url="{{pageItem.url}}" bindtap="goPage">
+        <view class="li-icon" style="color:{{pageItem.iconColor}};">
+          <tty-icon type="{{pageItem.iconType}}"></tty-icon>
+        </view>
+        <text class="li-name">{{pageItem.name}}</text>
+        <view class="li-icon-more">
+          <tty-icon type="more"></tty-icon>
+        </view>
+      </view>
+      <button wx:if="{{!pageItem.url}}" class="li li-btn{{index !== 0?' border border-top':''}}" session-from="nickName={{userInfo.nickName}}|avatarUrl={{userInfo.avatarUrl}}" open-type="contact">
+        <view class="li-icon" style="color:{{pageItem.iconColor}};">
+          <tty-icon type="{{pageItem.iconType}}"></tty-icon>
+        </view>
+        <text class="li-name">{{pageItem.name}}</text>
+        <view class="li-icon-more">
+          <tty-icon type="more"></tty-icon>
+        </view>
+      </button>
+    </block>
+
+  </view>
+</view>

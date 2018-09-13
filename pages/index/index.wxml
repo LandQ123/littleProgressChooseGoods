@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="500" circular="{{true}}" indicator-color="#fff" indicator-active-color="#1c69d3">
+    <block wx:for="{{carouselList}}">
+      <swiper-item>
+        <view class="image-wrap" data-url="{{item.pageUrl}}" hover-class="hover-class" bindtap="goWebView">
+          <image src="{{item.imgUrl}}" class="slide-image" height="180" />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class="page-btn-wrap">
+    <block wx:for="{{pageList}}">
+      <view wx:if="{{item.url}}" class="list-item" hover-class="hover-class" data-url="{{item.url}}" bindtap="goPage">
+        <view class="item-icon" style="background:{{item.background}}">
+          <tty-icon type="{{ item.icon }}"></tty-icon>
+        </view>
+        <text class="item-name">{{item.name}}</text>
+      </view>
+      <button wx:if="{{!item.url}}" class="list-item list-btn" session-from="nickName={{userInfo.nickName}}|avatarUrl={{userInfo.avatarUrl}}" open-type="contact">
+        <view class="item-icon" style="background:{{item.background}}">
+          <tty-icon type="{{ item.icon }}"></tty-icon>
+        </view>
+        <text class="item-name">{{item.name}}</text>
+      </button>
+    </block>
+  </view>
+
+  <tty-modal show="{{showLoginModal}}">
+    <view class="login-container">
+      <view class="title">短信快捷登录</view>
+      <view class="tips">
+        <text>验证即登录</text>
+        <text>未注册将自动创建门店帐号</text>
+      </view>
+      <form bindsubmit="loginSubmit">
+        <input class="input" name="mobile" value="{{formData.mobile}}" bindinput="mobileUpdate" placeholder="请输入手机号码" />
+        <view class="vcode-group">
+          <input class="input" name="vcode" value="{{formData.captcha}}" bindinput="vcodeUpdate" placeholder="短信验证码" />
+          <button class="btn btn-info btn-right-angle" bindtap="getVcode" disabled="{{restTime}}">{{vcodeText}}</button>
+        </view>
+        <button class="btn btn-primary" formType="submit" disabled="{{!formData.mobile || !formData.captcha}}">登 录</button>
+        <view class="view-protocol">
+          <text>阅读并接受</text>
+          <navigator url="{{userProtocolUrl}}" class="protocol-web-view" hover-class="navigator-hover">《田田云用户协议》</navigator>
+        </view>
+      </form>
+    </view>
+  </tty-modal>
+
+  <tty-modal show="{{showPerfectInfoModal}}">
+    <view class="perfect-info-container">
+      <view class="tips">
+        <text>为了向你提供更优质服务</text>
+        <text>请完善门店信息</text>
+      </view>
+      <button class="btn btn-primary" bindtap="goPerfectInfo">马上完善</button>
+    </view>
+  </tty-modal>
+</view>

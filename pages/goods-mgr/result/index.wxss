@@ -1,0 +1,29 @@
+/* pages/goods-mgr/result/index.wxss */
+
+@import "../common.wxss";
+.result-item {
+  overflow: hidden;
+  width: 710rpx;
+  margin: 20rpx auto 0;
+  border-radius: 20rpx;
+  background-color: #fff;
+}
+
+.result-item__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84rpx;
+  padding: 0 30rpx;
+  background-color: #FAFAFA;
+}
+
+.result-item__body {
+  padding: 25rpx 30rpx;
+  color: #333;
+}
+
+.result-item__body>.spec {
+  margin-top: 6rpx;
+  color: #999;
+}

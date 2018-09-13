@@ -1,0 +1,30 @@
+<!--pages/kaidan/confirm-order/confirm-order.wxml-->
+<import src="../template/order-goods/order-goods.wxml"/>
+<wxs src="../../../filter/filter.wxs" module="filter"/>
+<view class="container">
+    <scroll-view scroll-y="true" class="scroller">
+        <view class="msg">
+            <tty-input title="客户：" required hasLine slot="footer" right name="addr"
+                       bindchange="handleNameInput" value="{{name}}" maxlength="10" placeholder="请输入客户姓名"></tty-input>
+            <tty-input title="号码：" right name="addr" inputType="number"
+                       bindchange="handleNumInput" placeholder="请输入客户号码"></tty-input>
+        </view>
+        <view class="goods-list">
+            <view class="list-content">
+                <template is="order-goods" data="{{goodsData}}"></template>
+                <view class="total">
+                    <text>合计：</text>
+                    <text class="totalMoney">{{filter.currencyFormat(totalMoney)}}</text>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="footer border border-top">
+        <view class="total">
+            合计：
+            <view>{{filter.currencyFormat(totalMoney)}}</view>
+        </view>
+        <button class="btn btn-success collect-money" catchtap="collectMoney">收款</button>
+    </view>
+    <tty-dialog id="tty-mention-confirm" content-class="kaidan-height"></tty-dialog>
+</view>

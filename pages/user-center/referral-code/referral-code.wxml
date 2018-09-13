@@ -1,0 +1,8 @@
+<!--pages/user-center/referral-code/referral-code.wxml-->
+<view class="container">
+  <image class="share-image" src="{{shareImageUrl}}" mode="cover" bindtap="tapHandle" bindlongpress="longPressHandle"></image>
+  <view class="painter-wrap">
+    <painter palette="{{paletteData}}" bind:imgOK="onImgOK" bind:imgErr="onImgErr"></painter>
+  </view>
+  <button class="btn btn-primary" bindtap="saveQrcode">保存</button>
+</view>

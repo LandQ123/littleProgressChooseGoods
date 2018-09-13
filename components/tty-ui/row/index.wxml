@@ -1,0 +1,1 @@
+<view class="row-class tty-row"><slot></slot></view>

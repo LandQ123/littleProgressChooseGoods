@@ -1,0 +1,13 @@
+<!--pages/kaidan/confirm-order/confirm-order.wxml-->
+<wxs src="../../../../filter/filter.wxs" module="filter"/>
+<template name="order-goods">
+    <block wx:for="{{goodsData}}" wx:key="{{index}}">
+        <view class="temp-goods border border-bottom">
+            <text class="temp-name">{{item.goods_name}}</text>
+            <view class="right">
+                <view class="temp-money">{{filter.currencyFormat(item.price)}}</view>
+                <view class="temp-amount">x{{item.count}}{{item.base_unit_name}}</view>
+            </view>
+        </view>
+    </block>
+</template>

@@ -1,0 +1,53 @@
+<!--components/linkage/linkage.wxml-->
+<wxs src="../../filter/filter.wxs" module="filter"/>
+<view class="container-linkpage">
+    <view class="nav">
+        <scroll-view scroll-y="true" style="height: 100%;" class="nav-scroll">
+            <view wx:for="{{data}}" class="nav-item {{index === navActive ? 'active' : ''}}" wx:key="{{index}}"
+                data-id="tty{{item.goods_category_one_id}}" data-index="{{index}}" catchtap="chooseType">{{item.goods_category_one_name}}
+            </view>
+        </scroll-view>
+    </view>
+    <view class="content content-class">
+        <scroll-view scroll-y="true" style="height: 100%;" scroll-into-view="{{contentActive}}" scroll-with-animation="true"
+                     bindscroll="onScroll" class="content-scroll">
+            <view class="pesticide" id="tty{{item.goods_category_one_id}}" wx:for="{{data}}" wx:for-index="typeOneIndex"
+                  wx:key="{{typeOneIndex}}">
+                <view wx:if="{{twoItem.goods.length}}" wx:for="{{item.goods_category_two}}" wx:for-item="twoItem"
+                      wx:for-index="typeTwoIndex" wx:key="{{typeTwoIndex}}">
+                    <view class="type-name">
+                        <view class="line"></view>
+                        <view class="name">{{twoItem.goods_category_two_name}}</view>
+                        <view class="line"></view>
+                    </view>
+                    <view class="pesticide-container">
+                        <view class="pesticide-item goods-class" wx:for="{{twoItem.goods}}" data-itemId="{{pes.goods_id}}" wx:for-item="pes" wx:key="{{goodsIndex}}"
+                            catchtap="tapHandle" wx:for-index="goodsIndex">
+                            <image src="{{pes.url || defaultImg}}" mode="aspectFit"></image>
+                            <view class="pesticide-item-content {{management ? 'management-item-content' : ''}}">
+                                <view class="describe">
+                                    <text>{{pes.goods_name}}</text>
+                                </view>
+                                <view class="inventory">
+                                    <text>库存 {{pes.stock}} {{pes.base_unit_name}}</text>
+                                </view>
+                                <view class="price">
+                                    <text>{{filter.currencyFormat(pes.price)}}</text>                 
+                                </view>
+                                <view class="stepper" wx:if="{{!management}}">
+                                    <tty-stepper size="small" goodsId="{{pes.goods_id}}" typeOneIndex="{{typeOneIndex}}" typeTwoIndex="{{typeTwoIndex}}" goodsIndex="{{goodsIndex}}"
+                                        totalStock="{{pes.stock}}" totalNum="{{pes.count}}" bindStepperEvent="stepperEvent"></tty-stepper>
+                                </view>
+                            </view>
+                        </view>
+                    </view>   
+                </view>
+            </view>
+            <view class="has-no-more" wx:if="{{data.length}}">
+              <view class="line"></view>
+              <view class="name">没有更多</view>
+              <view class="line"></view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

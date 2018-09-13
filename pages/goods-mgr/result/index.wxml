@@ -1,0 +1,16 @@
+<!--pages/goods-mgr/result/index.wxml-->
+<view class="goodsMgr-result">
+  <view data-index="{{index}}" wx:for="{{results}}" wx:key="result-item-{{index}}" class="result-item" bindtap="handleTap">
+    <view class="result-item__header">
+      <text>{{item.registration_holder}}</text>
+      <text>{{item.registration_number}}</text>
+    </view>
+    <view class="result-item__body">
+      <view>{{item.goods_name}}</view>
+      <view class="spec">{{item.goods_spec}}</view>
+    </view>
+  </view>
+  <view class="tip--nomore">
+    <text>没有更多</text>
+  </view>
+</view>

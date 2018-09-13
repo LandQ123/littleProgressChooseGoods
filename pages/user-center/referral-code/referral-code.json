@@ -1,0 +1,8 @@
+{
+  "window": {
+    "navigationBarTitleText": "推荐码"
+  },
+  "usingComponents": {
+    "painter": "../../../components/painter/painter"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "window": {
+    "navigationBarTitleText": "首页"
+  },
+  "usingComponents": {
+    "tty-modal": "../../components/modal/modal",
+    "tty-icon": "../../components/tty-ui/icon/index"
+  }
+}

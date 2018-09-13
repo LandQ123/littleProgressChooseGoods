@@ -1,0 +1,78 @@
+<!-- pages/goods-mgr/add/index.wxml -->
+<view class="goodMgrAdd">
+  <view class="goodMgrAdd__basicInfo">
+    <tty-input data-name="name" title="名称" required hasLine slot="footer" right name="name" placeholder="请输入商品名"
+      bindchange="handleInput" value="{{formData.name}}">
+      <button wx:if="{{title === '新增商品'}}" class="icon-scan" plain hover-class="icon-scan--hover" bindtap="handleScan">
+        <tty-icon class="added-icon" type="saomiao-def"></tty-icon>
+      </button>
+    </tty-input>
+    <tty-input data-name="price" title="单价 (元)" required hasLine slot="footer" right name="price" placeholder="请输入商品销售单价"
+      value="{{formData.price}}" bindchange="handleInput" type="number" />
+    <tty-input data-name="spec" title="规格" hasLine slot="footer" right name="spec" placeholder="请输入商品规格" bindchange="handleInput"
+      value="{{formData.spec}}" />
+    <!-- <navigator> -->
+    <tty-input data-name="unit" title="单位" required hasLine slot="footer" right name="unit" isLink placeholder="请选择单位"
+      disabled value="{{formData.unit.unit_name}}" bindtap="handleUnit" />
+    <!-- </navigator> -->
+    <tty-input data-name="stock" disabled="{{title === '编辑商品'}}" title="库存" required hasLine slot="footer" right name="stock"
+      placeholder="请输入库存" value="{{formData.stock}}" bindchange="handleInput" type="number">
+      <button wx:if="{{title === '编辑商品'}}" class="increment_stock" bindtap="handleStock">增加库存</button>
+    </tty-input>
+    <navigator url="/pages/goods-mgr/category/index">
+      <tty-input data-name="category" title="商品分类" required hasLine slot="footer" right name="category" isLink
+        placeholder="请选择商品分类" disabled value="{{formData.category.goods_category_two_name}}" />
+    </navigator>
+    <navigator url="/pages/goods-mgr/brand/index">
+      <tty-input data-name="brand" title="品牌" required slot="footer" right name="brand" isLink placeholder="请选择商品品牌"
+        disabled value="{{formData.brand.brand_name}}" />
+    </navigator>
+  </view>
+  <view class="goodMgrAdd__license">
+    <tty-input data-name="num" title="登记证号" hasLine slot="footer" right name="num" placeholder="请输入登记证号码" value="{{formData.num}}"
+      bindchange="handleInput" />
+    <tty-input data-name="owner" title="登记证持有人" hasLine slot="footer" right name="owner" placeholder="请输入登记证持有人" value="{{formData.owner}}"
+      bindchange="handleInput" />
+    <!-- <tty-input data-name="url" type="textarea" title="二维码网址" slot="footer" right name="url" placeholder="请输入二维码网址" value="{{formData.url}}"
+      bindchange="handleInput" /> -->
+    <tty-input data-name="url" title="二维码网址" hasLine slot="footer" right name="url" placeholder="请输入二维码网址" value="{{formData.url}}"
+      bindchange="handleInput" />
+  </view>
+  <view class="goodMgrAdd__pic">
+    <view class="goodMgrAdd__pic--text">
+      <text>商品图片</text>
+    </view>
+    <view class="goodMgrAdd__pic--pb20">
+      <view wx:for="{{formData.pics}}" wx:key="goodMgrAdd__pic--content-{{index}}" class="goodMgrAdd__pic--content">
+        <view class="pic-added">
+          <image src="{{item}}"></image>
+          <view data-index="{{index}}" class="btn" bindtap="handleDelPic">
+            <tty-icon class="added-icon" type="control-community"></tty-icon>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{(formData.pics.length < 9)}}" class="goodMgrAdd__pic--content">
+        <button class="pic__btn--add" plain bindtap="handleChoosePic">
+          <tty-icon class="add-icon" type="control-community"></tty-icon>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view class="goodMgrAdd__footer">
+    <button class="btn btn-primary btn--fixed" bindtap="handleSave">保存</button>
+  </view>
+  <tty-dialog id="dialog-scanCode" content-class="dialog-scanCode__content">
+    {{errMsg}}
+  </tty-dialog>
+  <tty-modal show="{{showModal}}" showFooter confirmButtonText="取消" cancelButtonText="确认" bindconfirm="handleCancelStock"
+    bindcancel="handleConfirmStock" cancel-btn-cls="cancelBtnCls" confirm-btn-cls="confirmBtnCls">
+    <view class="modal-body">
+      <text class="modal-title">增加库存</text>
+      <view class="modal-content">
+        <text class="modal-content-label">库存</text>
+        <input class="goodMgr-add-item__input modal-content-input" value="{{increment_stock}}" placeholder="请输入库存"
+          placeholder-class="placeholder-cls" bindinput="handleStockInput" type="number" />
+      </view>
+    </view>
+  </tty-modal>
+</view>

@@ -1,0 +1,265 @@
+/**app.wxss**/
+@import "components/tty-ui/index.wxss";
+
+page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+  font-size: 32rpx;
+  color: #333;
+}
+
+.container {
+  box-sizing: border-box;
+}
+
+/* 按钮样式  */
+
+.btn {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  color: #1c69d3;
+  background-color: #fff;
+  border-color: #ccc;
+  font-size: 32rpx;
+  font-weight: normal;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  user-select: none;
+}
+
+.btn::after {
+  border: none;
+}
+
+.btn:active, .btn.active {
+  box-shadow: 0 0 0 10000rpx rgba(0, 0, 0, 0.1) inset;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  color: #999;
+  background-color: #ccc !important;
+  background-image: none !important;
+  border-color: #ccc !important;
+  box-shadow: none;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(0, 160, 230, 1), rgba(28, 105, 211, 1));
+  border-color: #1c69d3;
+  border-width: 0;
+}
+
+.btn-success {
+  color: #fff;
+  background: linear-gradient(90deg, rgba(255, 184, 0, 1), rgba(255, 130, 0, 1));
+  border-color: #ff8200;
+  border-width: 0;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #00a0e6;
+  border-color: #00a0e6;
+}
+
+.btn-warning {
+  color: #fff;
+  background-color: #f0ad4e;
+  border-color: #eea236;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #f00;
+  border-color: #e60000;
+}
+
+.btn.btn-lg {
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 48rpx;
+}
+
+.btn.btn-right-angle {
+  border-radius: 0;
+}
+
+/* 输入框样式  */
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 40rpx;
+  font-size: 32rpx;
+  color: #333;
+  background-color: #f2f2f2;
+  border-radius: 44rpx;
+}
+
+.input.input-lg {
+  height: 96rpx;
+  line-height: 96rpx;
+  border-radius: 48rpx;
+}
+
+.input.input-right-angle {
+  border-radius: 0;
+}
+
+.input-placeholder {
+  color: #ccc;
+}
+
+.button-hover {
+  box-shadow: 0 0 0 10000rpx rgba(0, 0, 0, 0.1) inset;
+}
+
+.hover-class {
+  box-shadow: 0 0 0 10000rpx rgba(0, 0, 0, 0.1) inset;
+}
+
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* panel组样式 */
+
+.panel-group {
+  padding: 20rpx;
+}
+
+.panel {
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+}
+
+.panel:last-child {
+  margin-bottom: 0;
+}
+
+.panel .panel-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 84rpx;
+  line-height: 84rpx;
+  padding: 0 30rpx;
+  background-color: #fafafa;
+  color: #999;
+}
+
+.panel .panel-header.required::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: 32rpx;
+  margin: auto 0;
+  border-left: 4rpx solid #ff3200;
+}
+
+.panel .panel-body {
+  color: #333;
+}
+
+.panel .panel-body .list-item {
+  padding: 20rpx 30rpx;
+  position: relative;
+}
+
+.panel .panel-body .list-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  transform-origin: 0 0;
+  transform: scale(0.5);
+  border-bottom: 1px solid #ddd;
+}
+
+/* 边框，解决1px|1rpx在手机上显示变粗问题 */
+
+.border {
+  position: relative;
+}
+
+.border::before, .border::after {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  transform: scale(0.5);
+  border: 0 solid #ddd;
+}
+
+.border.border-all::after {
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border-width: 1px;
+  transform-origin: left top;
+}
+
+.border.border-top::before {
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 1px;
+  border-top-width: 1px;
+  transform-origin: left top;
+}
+
+.border.border-right::after {
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 200%;
+  border-right-width: 1px;
+  transform-origin: right top;
+}
+
+.border.border-bottom::after {
+  left: 0;
+  bottom: 0;
+  width: 200%;
+  height: 1px;
+  border-bottom-width: 1px;
+  transform-origin: left bottom;
+}
+
+.border.border-left::before {
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 200%;
+  border-left-width: 1px;
+  transform-origin: left top;
+}

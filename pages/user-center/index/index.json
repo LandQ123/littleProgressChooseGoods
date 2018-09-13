@@ -1,0 +1,8 @@
+{
+  "window": {
+    "navigationBarTitleText": "我的"
+  },
+  "usingComponents": {
+    "tty-icon": "../../../components/tty-ui/icon/index"
+  }
+}

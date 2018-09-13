@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "选择单位",
+  "usingComponents": {
+    "list": "../list/index",
+    "tty-dialog": "../../../components/tty-ui/dialog/index"
+  }
+}

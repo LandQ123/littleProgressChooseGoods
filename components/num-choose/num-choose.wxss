@@ -1,0 +1,80 @@
+/* components/num-choose/num-choose.wxss */
+.wrapper{
+    width: 170rpx;
+    position: relative;
+}
+.num-choose{
+    width: 0;
+    height: 48rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: solid 1px transparent;
+    border-left: none;
+    border-right: none;
+    transition: all .5s;
+}
+.active{
+    border: solid 1px #ccc;
+    border-left: none;
+    border-right: none;
+    width: 120rpx;
+}
+.num-choose .minus,.num-choose .plus{
+    position: absolute;
+    right: -25rpx;
+    top: -1px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 40rpx;
+
+}
+.num-choose .minus{
+    width: 48rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 30rpx;
+    border: solid 1px #ccc;
+    color: #333;
+    opacity: 0;
+    transform: translate3d(0,0,0) rotate(360deg);
+    transition: all .5s;
+}
+.num-choose .num{
+    width: 70rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    position: absolute;
+    z-index: 1;
+    right: 25rpx;
+    top: 0;
+    font-size: 28rpx;
+    text-align: center;
+}
+.num-choose .plus{
+    width: 48rpx;
+    height: 48rpx;
+    line-height: 48rpx;
+    font-size: 30rpx;
+    background: #FF8200;
+    border: solid 1px #FF8200;
+    color: #fff;
+}
+.num-choose .active{
+    transform: translate3d(-119rpx,0,0) rotate(-360deg);
+    opacity: 1;
+    transition: all .5s;
+}
+.task{
+    width: 10rpx;
+    height: 50rpx;
+    position: absolute;
+    z-index: 1000;
+}
+.task-left {
+    left: 25rpx;
+}
+.task-right {
+    right: 25rpx;
+}
+

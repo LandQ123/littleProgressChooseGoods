@@ -1,0 +1,52 @@
+<!--components/shopping-basket/shopping-basket.wxml-->
+<wxs src="../../filter/filter.wxs" module="filter"/>
+<view class="basket-container my-basket">
+    <view class="inner">
+        <view class="basket-icon {{pageTotalNum ? 'basket-icon-active' : ''}}" catchtap="showListHandle" wx:if="{{showBasket}}">
+            <view class="num" wx:if="{{pageTotalNum}}">{{pageTotalNum}}</view>
+            <tty-icon type="zhuye-caigou" class="{{pageTotalNum ? 'purchase-class' : ''}}"></tty-icon>
+        </view>
+        <view class="meg">
+            <view wx:if="{{!pageTotalNum}}" class="no-goods">未选择商品</view>
+            <view wx:if="{{pageTotalNum}}" class="total">
+                合计：
+                <view>{{pageTotalMoney}}</view>
+            </view>
+        </view>
+        <button class="my-btn my-css" catchtap="confirm">
+            选好了
+        </button>
+    </view>
+    <view class="back" wx:if="{{showBack}}" catchtap="hideList">
+        <view class="goods-detail {{showList ? 'active' : ''}}" catchtap="stopProp">
+            <view class="banner">
+                <view class="title">已选商品</view>
+                <view class="clear-all" catchtap="clearAll">
+                    <tty-icon type="gouwuche-qingko"></tty-icon>
+                    <view class="describe">清空</view>
+                </view>
+            </view>
+            <scroll-view scroll-y="true" class="scroller">
+                <view class="scroll-item my-basket-list" wx:for="{{goodsData}}" wx:key="{{index}}">
+                    <view class="left">
+                        <view class="goods-name">
+                            <text>{{item.goods_name}}</text>
+                        </view>
+                        <view class="goods-price">
+                            <view class="num-price">{{filter.currencyFormat(item.price)}}</view>
+                            <view class="unit">{{item.base_unit_name}}</view>
+                        </view>
+                    </view>
+                    <view class="right">
+                        <view class="stepper-wrapper">
+                            <tty-stepper bindStepperEvent="stepperEvent" goodsId="{{item.goods_id}}"
+                                         typeOneIndex="{{item.typeOneIndex}}" typeTwoIndex="{{item.typeTwoIndex}}"
+                                         goodsIndex="{{item.goodsIndex}}"
+                                         totalNum="{{item.count}}" totalStock="{{item.stock}}"></tty-stepper>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>

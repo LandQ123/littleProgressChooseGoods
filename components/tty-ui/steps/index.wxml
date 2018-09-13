@@ -1,0 +1,13 @@
+<view class="tty-steps tty-steps--{{ type == 'vertical' ? 'vsteps' : 'steps' }} tty-steps--{{ steps.length }} {{ className }}">
+  <view
+    wx:for="{{ steps }}" wx:for-item="step" wx:key="unique" wx:for-index="index"
+    class="tty-steps__step {{ hasDesc ? 'tty-steps__step--db-title' : '' }} {{ index == 0 ? 'tty-steps__step--first-child' : '' }} {{ index == steps.length - 1 ? 'tty-steps__step--last-child' : '' }} {{ step.done ? 'tty-steps__step--done' : '' }} {{ step.current ? 'tty-steps__step--cur' : '' }}"
+  >
+    <view class="tty-steps__title">{{ step.text }}</view>
+    <view wx:if="{{ hasDesc && step.desc }}" class="tty-steps__title tty-steps__title--desc">{{ step.desc }}</view>
+    <view class="tty-steps__icons">
+      <view class="tty-steps__circle"></view>
+    </view>
+    <view class="tty-steps__line"></view>
+  </view>
+</view>

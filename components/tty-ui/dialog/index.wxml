@@ -1,0 +1,36 @@
+<pop-manager
+  show="{{ show }}"
+  type="center"
+>
+  <view class="tty-dialog--container">
+    <view
+      wx:if="{{ title }}"
+      class="tty-dialog__header"
+    >{{ title }}</view>
+    <view
+      class="tty-dialog__content {{ title ? 'tty-dialog__content--title' : '' }}"
+    >
+      <text wx:if="{{message}}">{{ message }}</text>
+      <slot></slot>
+    </view>
+    <view
+      class="tty-dialog__footer {{ buttonsShowVertical ? 'tty-dialog__footer--vertical' : 'tty-dialog__footer--horizon' }}"
+    >
+      <block
+        wx:for="{{ buttons }}"
+        wx:key="{{ item.text }}-{{ item.type }}"
+      >
+        <button
+          class="tty-dialog__button {{ index === 0 ? 'tty-dialog__button-inside--first' : 'tty-dialog__button-inside' }}"
+          data-type="{{ item.type }}"
+          open-type="{{ item.openType }}"
+          bindtap="handleButtonClick"
+        >
+          <view
+            style="color: {{ item.color || '#333' }}"
+          >{{ item.text }}</view>
+        </button>
+      </block>
+    </view>
+  </view>
+</pop-manager>

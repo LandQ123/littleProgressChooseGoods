@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/kaidan/choose-goods/choose-goods",
+    "pages/index/index",
+    "pages/user-center/index/index",
+    "pages/kaidan/confirm-order/confirm-order"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "门店系统助手",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f2f2f2"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/icons/icon-index-default.png",
+        "selectedIconPath": "assets/icons/icon-index-selected.png"
+      },
+      {
+        "pagePath": "pages/user-center/index/index",
+        "text": "我的",
+        "iconPath": "assets/icons/icon-user-default.png",
+        "selectedIconPath": "assets/icons/icon-user-selected.png"
+      }
+    ],
+    "selectedColor": "#1c69c3",
+    "backgroundColor": "#fff"
+  },
+  "debug": false
+}

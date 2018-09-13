@@ -1,0 +1,27 @@
+/* pages/goods-mgr/list/index.wxss */
+
+@import "../common.wxss";
+
+.goodsMgr-list {
+  font-size: 32rpx;
+  margin-left: 24rpx;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  text-align: justify;
+  /* border-bottom: 1rpx solid #ddd; */
+  color: #333;
+}
+
+.list-item.checked {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+.list-item__icon {
+  width: 56rpx;
+  height: 56rpx;
+}

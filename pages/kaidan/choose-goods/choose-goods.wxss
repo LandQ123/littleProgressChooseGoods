@@ -1,0 +1,47 @@
+page {
+  overflow: hidden;
+}
+
+.container {
+  color: #333;
+}
+
+.main {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 100rpx;
+  overflow: hidden;
+}
+
+.shopping-basket {
+  width: 100%;
+  height: 100rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.kaidan-height {
+  padding: 72rpx 0;
+}
+
+.has-no-goods {
+  text-align: center;
+  margin-top: 300rpx;
+  color: #999;
+}
+
+.has-no-goods text {
+  display: block;
+  margin-bottom: 60rpx;
+}
+
+.has-no-goods .has-no-goods-btn {
+  width: 670rpx;
+  border: none;
+  position: absolute;
+  left: 40rpx;
+  bottom: 20rpx;
+}

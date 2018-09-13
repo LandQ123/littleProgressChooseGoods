@@ -1,0 +1,13 @@
+<!--pages/goods-mgr/brand/index.wxml-->
+<view class="goodsMgr-brand">
+  <list data="{{brands}}" bindchange="handleChange" list-cls="border border-bottom"></list>
+  <button class="btn btn-primary btn--fixed" bindtap="handleAdd">新增品牌</button>
+  <tty-modal show="{{showModal}}" showFooter confirmButtonText="取消" cancelButtonText="确认" bindconfirm="handleConfirmBtn"
+    bindcancel="handleCancelBtn" cancel-btn-cls="cancelBtnCls" confirm-btn-cls="confirmBtnCls">
+    <view class="modal-body">
+      <text class="modal-title">新增品牌</text>
+      <input class="goodMgr-add-item__input" value="{{newBrand}}" placeholder="请输入品牌" placeholder-class="placeholder-cls"
+        bindinput="handleInput" />
+    </view>
+  </tty-modal>
+</view>

@@ -1,0 +1,13 @@
+<!--components/modal/modal.wxml-->
+<view wx:if="{{show}}" class='modal-mask'>
+  <view class='modal'>
+    <view wx:if="{{showHeader}}" class="modal-header">{{title}}</view>
+    <view class="modal-body">
+      <slot></slot>
+    </view>
+    <view wx:if="{{showFooter}}" class="modal-footer">
+      <button class="btn cancel-btn-cls" bind:tap="cancelTap">{{cancelButtonText}}</button>
+      <button class="btn confirm-btn confirm-btn-cls" bind:tap="confirmTap" open-type="{{confirmButtonOpenType}}">{{confirmButtonText}}</button>
+    </view>
+  </view>
+</view>

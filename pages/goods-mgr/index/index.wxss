@@ -1,0 +1,33 @@
+/* pages/goods-mgr/index.wxss */
+
+@import "../common.wxss";
+::-webkit-scrollbar {
+  display: none;
+}
+
+.goodsMgr-index {
+  box-sizing: border-box;
+  height: 100vh;
+  padding-bottom: 108rpx;
+}
+
+.tty-linkage-wrap {
+  position: absolute;
+  top: 1rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.goodsMgr-linkpage {
+  box-sizing: border-box;
+  padding-bottom: 110rpx;
+  background-color: #fff;
+}
+
+.blank-page {
+  padding-top: 300rpx;
+  text-align: center;
+  font-size: 32rpx;
+  color: #999;
+}

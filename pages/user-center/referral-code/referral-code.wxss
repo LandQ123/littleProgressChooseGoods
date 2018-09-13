@@ -1,0 +1,21 @@
+/* pages/user-center/referral-code/referral-code.wxss */
+.container {
+  padding: 30rpx;
+}
+
+.share-image {
+  width: 690rpx;
+  height: 920rpx;
+}
+
+.painter-wrap {
+  position: fixed;
+  top: 0;
+  left: 750rpx;
+  width: 690rpx;
+  height: 920rpx;
+}
+
+.btn-primary {
+  margin-top: 60rpx;
+}

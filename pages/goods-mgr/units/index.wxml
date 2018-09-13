@@ -1,0 +1,4 @@
+<!--pages/goods-mgr/add-units/index.wxml-->
+<view class="goodsMgr-addUnits">
+  <list data="{{units}}" bindchange="handleChange" list-cls="border border-bottom"></list>
+</view>

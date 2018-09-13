@@ -1,0 +1,1 @@
+  <view class="col-class tty-col {{ col ? 'tty-col-' + col : '' }} {{ offset ? 'tty-col-offset-' + offset : '' }}"><slot></slot></view>

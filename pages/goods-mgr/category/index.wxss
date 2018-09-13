@@ -1,0 +1,26 @@
+/* pages/goods-mgr/category/index.wxss */
+.goodsMgr-category {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+.category-sidebar {
+  /* flex: 180rpx; */
+  width: 180rpx;
+  background-color: #F2F2F2;
+}
+
+.category-sidebar__item {
+  height: 96rpx;
+  line-height: 96rpx;
+  text-align: center;
+}
+
+.category-sidebar__item.checked {
+  background-color: #fff;
+}
+
+.category-list {
+  width: 76%;
+}

@@ -1,0 +1,12 @@
+/* pages/goods-mgr/brand/index.wxss */
+
+@import "../common.wxss";
+
+.goodsMgr-addUnits {
+  min-height: 100vh;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}

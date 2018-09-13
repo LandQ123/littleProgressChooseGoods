@@ -1,0 +1,153 @@
+@import "../common.wxss";
+
+page {
+  padding-bottom: 108rpx;
+}
+
+image {
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.goodMgrAdd__basicInfo,
+.goodMgrAdd__license,
+.goodMgrAdd__pic {
+  overflow: hidden;
+  margin: 20rpx;
+  border-radius: 20rpx;
+}
+
+.goodMgrAdd__basicInfo .icon-scan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72rpx;
+  height: 72rpx;
+  margin-left: 24rpx;
+  padding: 0;
+  border: 0;
+  background-color: #f2f2f2;
+  border-radius: 72rpx;
+}
+
+.goodMgrAdd__basicInfo .icon-scan--hover {
+  opacity: 0.8;
+}
+
+.goodMgrAdd__basicInfo .icon-scan>image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.goodMgrAdd__pic {
+  background-color: #fff;
+}
+
+.goodMgrAdd__pic--text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96rpx;
+  padding: 0 30rpx;
+  color: #666;
+  background-color: #fafafa;
+}
+
+.goodMgrAdd__pic--pb20 {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 16rpx;
+}
+
+.goodMgrAdd__pic--content {
+  display: inline-block;
+  width: 33.33%;
+  text-align: center;
+}
+
+.goodMgrAdd__pic--content>.pic__btn--add,
+.goodMgrAdd__pic--content>.pic-added {
+  display: inline-block;
+  width: 136rpx;
+  height: 136rpx;
+  background-color: #f2f2f2;
+}
+
+.goodMgrAdd__pic--content>.pic__btn--add {
+  margin-top: 24rpx;
+  line-height: 136rpx;
+  border: 0;
+}
+
+.goodMgrAdd__pic--content>.pic__btn--add>.add-icon {
+  font-size: 68rpx;
+  color: #ccc;
+}
+
+.goodMgrAdd__pic--content>.pic-added {
+  display: inline-block;
+  position: relative;
+  margin-top: 24rpx;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.goodMgrAdd__pic--content>.pic-added>.btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 40rpx;
+  transform: translateX(50%) translateY(-50%);
+  background-color: #666;
+}
+
+.goodMgrAdd__pic--content>.pic-added>.btn>.added-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.dialog-scanCode__content {
+  height: 176rpx;
+}
+
+/* 增加库存按钮样式 */
+.increment_stock {
+  margin-left: 10rpx;
+  font-size: 28rpx;
+}
+
+/* 
+.modal-body {
+  height: 280rpx;
+}
+
+.modal-title {} */
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 520rpx;
+  margin: 0 auto;
+}
+
+.modal-content>.modal-content-label {
+  width: 120rpx;
+  text-align: center;
+}
+
+.modal-content>.modal-content-input {
+  width: 100%;
+}
+
+.placeholder-cls {
+  text-align: center;
+}

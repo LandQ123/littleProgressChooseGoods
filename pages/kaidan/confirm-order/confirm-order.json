@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "开单",
+  "usingComponents": {
+    "tty-input": "../../../components/tty-ui/field/index",
+    "tty-sh-basket": "../../../components/shopping-basket/shopping-basket",
+    "tty-dialog": "../../../components/tty-ui/dialog/index"
+  }
+}

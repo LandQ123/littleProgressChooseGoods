@@ -1,0 +1,129 @@
+/**index.wxss**/
+page {
+  background: #fff;
+}
+
+.swiper,
+.swiper .image-wrap {
+  height: 360rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.page-btn-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 250rpx;
+  height: 232rpx;
+}
+
+.list-btn {
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+}
+
+.list-btn::after {
+  border: none;
+}
+
+.item-name {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 16rpx;
+}
+
+.item-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96rpx;
+  height: 96rpx;
+  font-size: 64rpx;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.item-name {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.login-container {
+  padding: 40rpx;
+  text-align: center;
+}
+
+.login-container .title {
+  margin-top: 24rpx;
+  color: #333;
+}
+
+.login-container .tips {
+  color: #999;
+  margin: 24rpx 0;
+}
+
+.login-container .tips text {
+  display: block;
+}
+
+.login-container .input {
+  text-align: left;
+  margin-bottom: 24rpx;
+}
+
+.login-container .vcode-group {
+  display: flex;
+}
+
+.login-container .vcode-group .input {
+  flex: 1;
+}
+
+
+.login-container .vcode-group .btn {
+  width: 196rpx;
+  margin-left: 28rpx;
+}
+
+.login-container .btn-primary {
+  margin-bottom: 24rpx; 
+}
+
+.view-protocol {
+  color: #999;
+}
+
+.protocol-web-view {
+  display: inline;
+  color: #1c69d3;
+}
+
+.perfect-info-container {
+  padding: 0 40rpx;
+  text-align: center;
+}
+
+.perfect-info-container .tips {
+  margin-top: 72rpx;
+}
+
+.perfect-info-container .tips text {
+  display: block;
+}
+
+.perfect-info-container .btn-primary {
+  margin: 72rpx 0; 
+}

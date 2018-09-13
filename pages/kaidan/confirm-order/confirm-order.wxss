@@ -1,0 +1,78 @@
+/* pages/kaidan/confirm-order/confirm-order.wxss */
+@import "../template/order-goods/order-goods.wxss";
+.container{
+    width: 710rpx;
+    margin: 0 20rpx;
+    margin-bottom: 110rpx;
+    font-size: 36rpx;
+    color: #333;
+    background: #F2F2F2;
+    padding-top: 20rpx;
+}
+.scroller{
+    height: 100%;
+}
+.msg{
+    background: #fff;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+.msg input{
+    height: 60rpx;
+    border: none;
+    text-align: right;
+    padding-right: 10rpx;
+}
+.goods-list{
+    background: #fff;
+    border-radius: 20rpx;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+}
+.list-content .total{
+    display: flex;
+    justify-content: space-between;
+    height: 84rpx;
+    line-height: 84rpx;
+    padding: 0 30rpx;
+}
+.list-content .total .totalMoney{
+    color: #FF8200;
+}
+
+.footer{
+    height: 100rpx;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+.footer .total{
+    font-size: 32rpx;
+    color: #333;
+    margin-left: 30rpx;
+}
+.footer .total view{
+    display: inline-block;
+    color: #FF8200;
+}
+.footer .collect-money{
+    width: 180rpx;
+    height: 100%;
+    line-height: 100rpx;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+
+
+
+
+
+
