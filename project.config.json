@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
 	"appid": "wx80cf0dc8f7ff5e86",
-	"projectname": "myT",
+	"projectname": "basket",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

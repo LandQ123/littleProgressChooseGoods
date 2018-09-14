@@ -78,8 +78,16 @@ Page({
       });
       return
     }
-    let {totalNum, goodsId, action} = e.detail;
-    let {typeData, goodsData, pageTotalNum} = this.data;
+    let {
+      totalNum,
+      goodsId,
+      action
+    } = e.detail;
+    let {
+      typeData,
+      goodsData,
+      pageTotalNum
+    } = this.data;
 
     if (action === 'plus') {
       pageTotalNum++;
@@ -92,27 +100,36 @@ Page({
       pageTotalNum = 0;
     }
     for (let i = 0; i < goodsData.length; i++) {
-      if (Number(goodsData[i].goods_id) === goodsId) {
+      if (goodsData[i].goods_id === goodsId) {
         // 获取索引，对应列表商品数量
         let typeOneIndex = goodsData[i].typeOneIndex;
         let typeTwoIndex = goodsData[i].typeTwoIndex;
         let goodsIndex = goodsData[i].goodsIndex;
-        typeData[typeOneIndex].goods_category_two[typeTwoIndex].goods[goodsIndex].count = goodsData[i].count;
-
+        let count = 0;
+        
         if (action === 'plus') {
           goodsData[i].count++;
+          count = goodsData[i].count
         } else if (action === 'minus') {
           goodsData[i].count--;
+          count = goodsData[i].count
           if (goodsData[i].count <= 0) {
             goodsData[i].count = 0;
             goodsData.splice(i, 1);
           }
         } else if (action === 'change') {
-          goodsData[i].count = totalNum <= 0 ? 0 : totalNum
+          if(totalNum <= 0) {
+            goodsData[i].count = 0;
+          }else {
+            goodsData[i].count = totalNum;
+          }
+          count = goodsData[i].count
           // 失去焦点，数量为0，删除
-        }else if(action === 'blur' && goodsData[i].count === 0) {
+        } else if (action === 'blur' && goodsData[i].count === 0) {
+          count = goodsData[i].count
           goodsData.splice(i, 1);
         }
+        typeData[typeOneIndex].goods_category_two[typeTwoIndex].goods[goodsIndex].count = count;
       }
     }
 

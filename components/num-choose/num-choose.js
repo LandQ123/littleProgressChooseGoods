@@ -2,7 +2,7 @@
 Component({
   properties: {
     goodsId: {
-      type: Number,
+      type: String,
       value: 0
     },
     totalNum: {
@@ -51,6 +51,8 @@ Component({
     plusHandle(e) {
       let {totalNum, typeOneIndex, typeTwoIndex, goodsIndex, totalStock} = this.data
       let goodsId = e.currentTarget.dataset.goodsid;
+      let pageX = e.touches[0].pageX;
+      let pageX = e.touches[0].pageY;
       totalNum++;
       if (totalStock === 0) {
         wx.showToast({
@@ -74,6 +76,8 @@ Component({
       });
       let myEventDetail = {
         goodsId: goodsId,
+        pageX: pageX,
+        pageY: pageY,
         totalNum: totalNum,
         typeOneIndex: typeOneIndex,
         typeTwoIndex: typeTwoIndex,
@@ -119,7 +123,6 @@ Component({
           totalNum: num,
           change: false
         });
-        console.log(this.data.totalNum)
         totalNum = totalStock;
       } else {
         totalNum = num;
