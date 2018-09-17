@@ -5,7 +5,7 @@ Component({
       type: String,
       value: 0
     },
-    totalNum: {
+    totalNum: { // 选择该商品的总数
       type: Number,
       value: 0
     },
@@ -32,7 +32,7 @@ Component({
   data: {
     hasNum: false,
     totalNum: 0,
-    change: false
+    change: false // 是否为手动输入
   },
   attached() {
     let totalNum = this.properties.totalNum;
@@ -48,11 +48,11 @@ Component({
     }
   },
   methods: {
-    plusHandle(e) {
+    plusHandle(e) { // 增加事件
       let {totalNum, typeOneIndex, typeTwoIndex, goodsIndex, totalStock} = this.data
       let goodsId = e.currentTarget.dataset.goodsid;
-      let pageX = e.touches[0].pageX;
-      let pageY = e.touches[0].pageY;
+      // let pageX = e.touches[0].pageX;
+      // let pageY = e.touches[0].pageY;
       totalNum++;
       if (totalStock === 0) {
         wx.showToast({
@@ -76,18 +76,18 @@ Component({
       });
       let myEventDetail = {
         goodsId: goodsId,
-        pageX: pageX,
-        pageY: pageY,
+        // pageX: pageX,
+        // pageY: pageY,
         totalNum: totalNum,
         typeOneIndex: typeOneIndex,
         typeTwoIndex: typeTwoIndex,
         goodsIndex: goodsIndex,
-        action: 'plus'
+        action: 'plus' // 增加事件标记
       }; // detail对象，提供给事件监听函数
-      this.triggerEvent('StepperEvent', myEventDetail)
+      this.triggerEvent('StepperEvent', myEventDetail) // 触发父级事件
     },
     focusNum(e) {
-      // 获取基础数据
+      // 手动输入时获取基础数据
       this.triggerEvent('StepperEvent', {
         action: 'getNum',
         num: Number(e.detail.value)

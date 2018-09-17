@@ -73,20 +73,20 @@ Page({
   /*购物框添加事件*/
   basketEvent(e) {
     if (e.detail.action === 'getNum') {
-      this.setData({
+      this.setData({ // 获取计算基数
         basePageTotalNum: this.data.pageTotalNum - e.detail.num
       });
       return
     }
     let {
-      totalNum,
-      goodsId,
-      action
+      totalNum, // 商品选择的数量
+      goodsId, // 修改商品时对应的商品id
+      action // 操作行为
     } = e.detail;
     let {
-      typeData,
-      goodsData,
-      pageTotalNum
+      typeData, // 列表数据
+      goodsData, // 购物篮数据
+      pageTotalNum // 页面商品总数
     } = this.data;
 
     if (action === 'plus') {
@@ -101,7 +101,7 @@ Page({
     }
     for (let i = 0; i < goodsData.length; i++) {
       if (goodsData[i].goods_id === goodsId) {
-        // 获取索引，对应列表商品数量
+        // 获取索引，处理列表商品数量
         let typeOneIndex = goodsData[i].typeOneIndex;
         let typeTwoIndex = goodsData[i].typeTwoIndex;
         let goodsIndex = goodsData[i].goodsIndex;
@@ -139,13 +139,13 @@ Page({
       pageTotalNum,
       basePageTotalNum: pageTotalNum - totalNum
     });
-    this.calculateMoney(goodsData);
+    this.calculateMoney(goodsData);// 计算总金额
   },
   /*商品列表添加事件*/
   contentEvent(e) {
     let {totalNum, action, typeOneIndex, typeTwoIndex, goodsIndex} = e.detail;
     if (action === 'getNum' || action === 'blur') {
-      this.setData({
+      this.setData({ // 获取总基数
         basePageTotalNum: this.data.pageTotalNum - e.detail.num
       });
       return
@@ -166,7 +166,7 @@ Page({
     let goods = typeData[typeOneIndex].goods_category_two[typeTwoIndex].goods[goodsIndex];
     typeData[typeOneIndex].goods_category_two[typeTwoIndex].goods[goodsIndex].count = totalNum;
     if (action === 'plus') {
-      pageTotalNum++;
+      pageTotalNum++; // 商品总数
     } else if (action === 'minus') {
       pageTotalNum--;
     } else if (action === 'change') {
@@ -180,13 +180,13 @@ Page({
     goods.typeOneIndex = typeOneIndex;
     goods.typeTwoIndex = typeTwoIndex;
     goods.goodsIndex = goodsIndex;
-    if (totalNum === 1 && action === 'plus') {
+    if (totalNum === 1 && action === 'plus') { // 购物篮里没有，则新增
       goodsData.unshift(goods);
     } else {
-      if(goodsData.includes(goods)) { // 如果购物篮中已有商品
+      if(goodsData.includes(goods)) { // 如果购物篮中已有商品，在原有基础上加1
         let index = goodsData.indexOf(goods)
         totalNum === 0 ? goodsData.splice(index, 1) : goodsData[index].count = totalNum;
-      }else { // 如果购物篮中没有，则添加
+      }else { // 如果购物篮中没有，则添加（针对手动修改）
         goodsData.unshift(goods);
       }
     }
