@@ -130,6 +130,7 @@ Page({
           goodsData.splice(i, 1);
         }
         typeData[typeOneIndex].goods_category_two[typeTwoIndex].goods[goodsIndex].count = count;
+        break
       }
     }
 

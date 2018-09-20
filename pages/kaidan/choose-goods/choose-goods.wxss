@@ -45,3 +45,14 @@ page {
   left: 40rpx;
   bottom: 20rpx;
 }
+.ball {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #FF8200;
+  position: absolute;
+  /* left: 40rpx; */
+}
+page{
+  position: relative;
+}
